@@ -2,7 +2,7 @@ import { useState } from 'react';
 import style from './SearchBar.module.css';
 
 export default function SearchBar(props) {
-  const [id, setId] = useState([]);
+  const [id, setId] = useState('');
   const [temperament, setTemperament] = useState('');
 
   function handleChange(event) {
@@ -12,13 +12,10 @@ export default function SearchBar(props) {
   function handleFilterTemperament(event) {
     setTemperament(event.target.value);
   }
-  function handleSubmit(event) {
-    props.onSearch(id, temperament);
-  }
 
-    function handleOrderToggle() {
-        props.onOrderToggle();
-    }
+  function handleOrderToggle() {
+    props.onOrderToggle();
+  }
 
   function handleToggleForm() {
     props.onToggleForm(true);
@@ -43,7 +40,7 @@ export default function SearchBar(props) {
         value={temperament}
         onChange={handleFilterTemperament}
       />
-      <button className={style.btnSearch} onClick={handleSubmit}>
+      <button className={style.btnSearch} onClick={() => props.onSearch(id, temperament)}>
         Search
       </button>
       <button className={style.btnSearch} onClick={handleOrderToggle}>

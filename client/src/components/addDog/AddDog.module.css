@@ -33,7 +33,7 @@
 .searchCamp {
   margin: 1px;
   float: center;
-  height: 90%;
+  width: 250px;
 }
 
 .textName {
@@ -65,11 +65,11 @@
   background-color: #2b2d31;
   align-items: center;
   justify-content: center;
-  margin: 20px;
+  margin: 10px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.5);
-  width: 100%;
+  width: 600px;
   display: flex;
-  justify-content: center;
+  justify-content:space-between;
   align-items: center;
 }
 

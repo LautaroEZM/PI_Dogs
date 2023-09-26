@@ -39,26 +39,27 @@ function AddDog(props) {
           </div>
           <div className={style.textStatus}>
             <label>Height:</label>
-            <input type="text" name="height" value={formData.height} onChange={handleChange} required />
+            <input className={style.searchCamp} type="text" name="height" value={formData.height} onChange={handleChange} required />
           </div>
           <div className={style.textStatus}>
             <label>Weight:</label>
-            <input type="text" name="weight" value={formData.weight} onChange={handleChange} required />
+            <input className={style.searchCamp} type="text" name="weight" value={formData.weight} onChange={handleChange} required />
           </div>
           <div className={style.textStatus}>
             <label>Image:</label>
-            <input type="text" name="image" value={formData.image} onChange={handleChange} required />
+            <input className={style.searchCamp} type="text" name="image" value={formData.image} onChange={handleChange} required />
           </div>
           <div className={style.textStatus}>
             <label>Life Span:</label>
-            <input type="text" name="lifeSpan" value={formData.lifeSpan} onChange={handleChange} required />
+            <input className={style.searchCamp} type="text" name="lifeSpan" value={formData.lifeSpan} onChange={handleChange} required />
           </div>
           <div className={style.textStatus}>
             <label>Temperament:</label>
-            <input type="text" name="temperament" value={formData.temperament} onChange={handleChange} required />
+            <input className={style.searchCamp} type="text" name="temperament" value={formData.temperament} onChange={handleChange} required />
           </div>
+          <div className={style.rightContainer}><button className={style.btnSearch} type="submit">Submit</button></div>
         </form>
-        <div className={style.rightContainer}><button className={style.btnSearch} type="submit">Submit</button></div>
+        
       </div>
 
     </div>

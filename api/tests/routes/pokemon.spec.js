@@ -16,7 +16,7 @@ describe('Pokemon routes', () => {
   }));
   beforeEach(() => Pokemon.sync({ force: true })
     .then(() => Pokemon.create(pokemon)));
-  describe('GET /pokemons', () => {
+  describe('GET /dogs', () => {
     it('should get 200', () =>
       agent.get('/pokemons').expect(200)
     );

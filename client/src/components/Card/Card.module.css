@@ -1,0 +1,101 @@
+.card {
+    width: 350px;
+    height: 500px;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #313338;
+    border-radius: 5px;
+    margin: 5px;
+    position: relative;
+    border: 2px solid #232428;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+    display: flex; /* Agrega esta línea para centrar verticalmente */
+}
+
+.profileImg {
+    border-radius: 5px;
+    top: 18.3%;
+    left: 24.4%;
+    width: 80%;
+    height: 250px;
+    border: 2px solid #232428;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.textName {
+    color: white;
+    font-family: 'Arial Narrow';
+    font-size: 130%;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    width: 350px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.textName:hover {
+    background-color: rgb(228, 175, 28);
+    color: black;
+    transition: background-color 0.7s;
+}
+
+
+.textStatus {
+    font-family: 'Arial Narrow';
+    font-size: 130%;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 1px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.5);
+    background-color: rgb(228, 175, 28);
+    color: #232428;
+    border-radius: 3px;
+    width: 95%;
+}
+
+.textStatusTemp {
+    font-family: 'Arial Narrow';
+    font-size: 130%;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 1px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.5);
+    background-color: rgb(228, 175, 28);
+    color: #232428;
+    border-radius: 3px;
+    width: 95%;
+    min-height: 100px;
+    display: flex;
+}
+
+.textContent {
+    margin: 10px;
+    color: white;
+    font-family: 'Arial Narrow';
+    font-size: 23px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.textStatusTemp:hover {
+    background-color: rgb(117, 90, 17);
+    color: black;
+    transition: background-color 0.5s;
+}
+
+.textStatus:hover {
+    background-color: rgb(117, 90, 17);
+    color: black;
+    transition: background-color 0.5s;
+}

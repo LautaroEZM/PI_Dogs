@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import style from './AddDog.module.css';
-import { saveDog, getDogs, toggleForm } from '../../store/actions';
+import { saveDog, toggleForm, setCurrentPage } from '../../store/actions';
 
 function AddDog(props) {
   const [formData, setFormData] = useState({
@@ -24,7 +24,7 @@ function AddDog(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     props.saveDog(formData);
-    props.getDogs();
+    props.setCurrentPage(1);
     props.toggleForm();
   };
 
@@ -72,11 +72,11 @@ const mapDispatchToProps = (dispatch) => {
     saveDog: (data) => {
       dispatch(saveDog(data));
     },
-    getDogs: () => {
-      dispatch(getDogs());
-    },
     toggleForm: () => {
       dispatch(toggleForm());
+    },
+    setCurrentPage: (pageNumber) => {
+      dispatch(setCurrentPage(pageNumber));
     },
   };
 };

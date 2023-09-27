@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import Card from '../Card/Card.jsx';
 import style from './Cards.module.css';
@@ -13,25 +13,18 @@ import SearchBar from '../SearchBar/SearchBar.jsx';
 import AddDog from '../addDog/AddDog';
 
 function Cards(props) {
-  // Estado local para el número de página actual
-  const [currentPageLocal, setCurrentPageLocal] = useState(1);
-
   useEffect(() => {
     props.getDogs();
   }, []);
 
-  useEffect(() => {
-    setCurrentPageLocal(1); // Reiniciar la página local cuando cambie la lista de perros
-  }, [props.dogs]);
-
   function onPageChange(pageNumber) {
-    setCurrentPageLocal(pageNumber);
     props.setCurrentPage(pageNumber);
   }
 
-  function onSearch(name, temperament) {
-    props.searchDogs(name, temperament);
-    setCurrentPageLocal(1); // Reiniciar la página local después de la búsqueda
+  function onSearch(name, temperament, source) {
+    props.searchDogs(name, temperament, source);
+    // Reiniciar la página local después de la búsqueda
+    props.setCurrentPage(1);
   }
 
   function onOrderToggle() {
@@ -42,9 +35,7 @@ function Cards(props) {
     props.toggleForm();
   }
 
-  const { currentPage, dogs, itemsPerPage, visibleForm, displayedDogs } = props;
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const { currentPage, visibleForm, displayedDogs } = props;
 
   return (
     <div>

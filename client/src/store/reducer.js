@@ -1,4 +1,4 @@
-import { GET_DOGS, SEARCH_DOGS, SET_CURRENT_PAGE, TOGGLE_FORM, SAVE_DOG, ORDER_TOGGLE} from "./actions";
+import { GET_DOGS, SEARCH_DOGS, SET_CURRENT_PAGE, TOGGLE_FORM, SAVE_DOG, ORDER_TOGGLE, SET_DOG } from "./actions";
 
 const initialState = {
   dog: {},
@@ -14,6 +14,8 @@ const rootReducer = (state = initialState, action) => {
       return { ...state };
     case GET_DOGS:
       return { ...state, dogs: action.payload };
+    case SET_DOG:
+      return { ...state, dog: action.payload };
     case SEARCH_DOGS:
       return { ...state, dogs: action.payload };
     case SAVE_DOG:

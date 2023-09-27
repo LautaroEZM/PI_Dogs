@@ -1,25 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import style from './Detail.module.css';
-import { getDogs } from '../../store/actions';
+import { getDogByBreedId } from '../../store/actions';
 import { useNavigate } from 'react-router-dom';
 
 function Detail(props) {
-  const [dog, setDog] = useState(false);
+  const { dog } = props;
   const { id } = useParams();
-  const query = useQuery();
-  const source = query.get('source');
   const navigate = useNavigate(); // Obtener la función de navegación
 
   useEffect(() => {
-    props.getDogs();
-    props.dogs.forEach((p) => {
-      if (p.id === Number(id) && p.source === source) {
-        setDog(p);
-      }
-    });
-  }, [id, source]);
+    props.getDogByBreedId(id);
+  }, [id]);
 
   const handleHomeClick = () => {
     // Redirigir a la ruta "/"
@@ -49,23 +42,17 @@ function Detail(props) {
   );
 }
 
-function useQuery() {
-  const { search } = useLocation();
-
-  return React.useMemo(() => new URLSearchParams(search), [search]);
-}
-
 const mapDispatchToProps = (dispatch) => {
   return {
-    getDogs: () => {
-      dispatch(getDogs());
+    getDogByBreedId: (id) => {
+      dispatch(getDogByBreedId(id));
     },
   };
 };
 
 const mapStateToProps = (state) => {
   return {
-    dogs: state.dogs,
+    dog: state.dog,
   };
 };
 

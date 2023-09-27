@@ -52,6 +52,10 @@
 }
 
 .pagination button.active {
-    background-color: #4caf50;
+    background-color: rgb(228, 175, 28);
     color: white;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    font-weight: bold;
 }

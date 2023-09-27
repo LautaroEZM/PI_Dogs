@@ -45,7 +45,7 @@ export default function SearchBar(props) {
         value={temperament}
         onChange={handleFilterTemperament}
       />
-      <select onChange={handleFilterSource}>
+      <select className={style.selectCamp} onChange={handleFilterSource}>
         <option value={''}>Todos</option>
         <option value={'internal'}>Local</option>
         <option value={'external'}>API</option>
